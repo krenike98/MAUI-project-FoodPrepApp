@@ -13,6 +13,12 @@
     <MauiXaml Update="App.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="DishesPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="IngredientsPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="MainPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

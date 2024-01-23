@@ -61,6 +61,15 @@
 	  <ProjectReference Include="..\FoodPrepApp.ViewModel\FoodPrepApp.ViewModel.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Update="DishesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="IngredientsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionFoodPrepAppHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>

@@ -7,6 +7,12 @@
         private int _numOfDishes;
         private int _numOfIngredients;
 
+
+        // properties
+
+        public DelegateCommand IngredientsButtonCommand { get; private set; }
+        public DelegateCommand DishesButtonCommand { get; private set; }
+
         public int NumOfDishes
         {
             get => _numOfDishes;
@@ -33,12 +39,36 @@
             }
         }
 
+
+        //events
+        public event EventHandler? IngredientSelected;
+        public event EventHandler? DishSelected;
+
         // constructor
         public FoodPrepViewModel(Model.FoodPrepModel model)
         {
             _model = model ?? throw new ArgumentNullException("model");
             _numOfDishes = _model.getNumOfDishes();
             _numOfIngredients = _model.getNumOfIngredients();
+            IngredientsButtonCommand = new DelegateCommand(Command_Ingredients);
+            DishesButtonCommand = new DelegateCommand(Command_Dishes);
         }
+
+        // command methods
+        private void Command_Ingredients(object? param)
+        {
+            OnIngredientSelected();
+        }
+
+        private void Command_Dishes(object? param)
+        {
+            OnDishSelected();
+        }
+
+
+
+        // private methods
+        private void OnIngredientSelected() => IngredientSelected?.Invoke(this, EventArgs.Empty);
+        private void OnDishSelected() => DishSelected?.Invoke(this, EventArgs.Empty);
     }
 }
