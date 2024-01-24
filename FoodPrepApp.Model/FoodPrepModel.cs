@@ -14,7 +14,10 @@ namespace FoodPrepApp.Model
             //CreateDummyItems();
             //JSONSaveLoader.WriteData(items, pathToJson);
         }
-
+        public void SaveData()
+        {
+            JSONSaveLoader.WriteData(items, pathToJson);
+        }
 
         public int getNumOfDishes()
         {

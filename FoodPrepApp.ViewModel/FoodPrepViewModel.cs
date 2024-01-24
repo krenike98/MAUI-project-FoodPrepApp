@@ -9,7 +9,7 @@
 
 
         // properties
-
+        public DelegateCommand NewButtonCommand { get; private set; }
         public DelegateCommand IngredientsButtonCommand { get; private set; }
         public DelegateCommand DishesButtonCommand { get; private set; }
 
@@ -43,6 +43,7 @@
         //events
         public event EventHandler? IngredientSelected;
         public event EventHandler? DishSelected;
+        public event EventHandler? NewItem;
 
         // constructor
         public FoodPrepViewModel(Model.FoodPrepModel model)
@@ -52,6 +53,7 @@
             _numOfIngredients = _model.getNumOfIngredients();
             IngredientsButtonCommand = new DelegateCommand(Command_Ingredients);
             DishesButtonCommand = new DelegateCommand(Command_Dishes);
+            NewButtonCommand = new DelegateCommand(Command_New);
         }
 
         // command methods
@@ -63,6 +65,11 @@
         private void Command_Dishes(object? param)
         {
             OnDishSelected();
+        }
+
+        private void Command_New(object? param)
+        {
+            NewItem?.Invoke(this, EventArgs.Empty);
         }
 
 

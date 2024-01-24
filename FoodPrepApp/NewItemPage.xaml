@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodPrepApp.NewItemPage"
+             BindingContext="{Binding NewItemViewModel}"
+             Title="Új elem felvétele">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Label 
+           Grid.Row="0"
+           Text="Új elem felvétele"
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" 
+            FontSize="32"/>
+
+        <StackLayout Padding="20" Grid.Row="1">
+
+            <RadioButton Content="Alapanyag" x:Name="dishRadioButton" GroupName="choice"
+                            IsChecked="{Binding IsIngredient}" FontSize="17"/>
+            <RadioButton Content="Készétel" x:Name="ingredientsRadioButton" GroupName="choice"
+                            IsChecked="{Binding IsDish}" FontSize="17"/>
+
+            <Label Text="Megnevezés:" FontSize="18" Margin="0,15,0,0" FontAttributes="Bold"/>
+            <Entry Text="{Binding Name}" x:Name="nameEntry" />
+
+            <Label Text="Lejárati dátum: " FontSize="18" Margin="0,15,0,0" FontAttributes="Bold"/>
+            <DatePicker  Date="{Binding ExpDate}" 
+                        x:Name="expirationDatePicker" MinimumDate="2024-02-01"/>
+
+            <Label Text="Megjegyzés:" FontSize="18" Margin="0,15,0,0" FontAttributes="Bold"/>
+            <Entry Text="{Binding Desc}" 
+                  x:Name="descriptionEntry"  />
+
+            <Label Text="Adagok száma:" FontSize="18" Margin="0,15,0,0" FontAttributes="Bold"/>
+            <Entry Text="{Binding NumOfPortions}" x:Name="portionsEntry" 
+                   Keyboard="Numeric" />
+
+            <Button Text="Kép hozzáadása" Command="{Binding ImageCommand}" 
+                    HorizontalOptions="Center" Margin="0,5,0,5"/>
+
+            <Button Text="Mentés" Command="{Binding SaveNewItemCommand}" 
+                    HorizontalOptions="Center" Margin="0,5,0,5"/>
+
+        </StackLayout>
+
+
+    </Grid>
+
+</ContentPage>
