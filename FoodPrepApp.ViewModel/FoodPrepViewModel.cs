@@ -6,6 +6,7 @@
         private Model.FoodPrepModel _model;
         private int _numOfDishes;
         private int _numOfIngredients;
+        
 
 
         // properties
@@ -38,7 +39,6 @@
                 }
             }
         }
-
 
         //events
         public event EventHandler? IngredientSelected;

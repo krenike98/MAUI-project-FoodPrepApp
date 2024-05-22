@@ -29,6 +29,7 @@ namespace FoodPrepApp
             MainPage = _rootPage;
         }
 
+
         private async void _mainViewModel_NewItem(object sender, EventArgs e)
         {
             if (!(_rootPage.CurrentPage is NewItemPage))
@@ -52,8 +53,7 @@ namespace FoodPrepApp
         {
             //DisplayAlert("Success", "Item saved successfully", "OK");
             _itemsViewModel = new ItemsViewModel(_model);
-            await _rootPage.Navigation.PushAsync(new MainPage());
-            _model.SaveData();
+            await _rootPage.PopAsync();
         }
     }
 }

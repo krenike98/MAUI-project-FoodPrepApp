@@ -2,33 +2,34 @@
 {
     public class Item
     {
-        public Guid id { get; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public DateTime expirationDate { get; set; }
-        public int numberOfPortions { get; set; }
-        public string? imagePath { get; set; }
+        public Guid Id { get; }
+        public string Name { get; set; }
+        public string? Description { get; set; }
+        public DateTime ExpirationDate { get; set; }
+        public int NumberOfPortions { get; set; }
 
-        public static Item CreateItem(string name, DateTime expirationDate, int numberOfPortions, string description = "", string? imagePath = null)
+        public Item()
         {
-            Item newItem = new Item(Guid.NewGuid(), name, expirationDate, numberOfPortions, description, imagePath);
+            
+        }
+        public static Item CreateItem(string name, DateTime expirationDate, int numberOfPortions, string description = "")
+        {
+            Item newItem = new Item(Guid.NewGuid(), name, expirationDate, numberOfPortions, description);
             return newItem;
         }
 
         public Item(Guid id, string name, DateTime expirationDate, int numberOfPortions, string description = "", string? imagePath = null)
         {
-            this.id = id;
-            this.name = name;
-            this.expirationDate = expirationDate;
-            this.numberOfPortions = numberOfPortions;
-            this.description = description;
-            if (imagePath != null) this.imagePath = imagePath;
-            else this.imagePath = "FoodPrepApp.Model.Data.Images.default.jpg";
+            this.Id = id;
+            this.Name = name;
+            this.ExpirationDate = expirationDate;
+            this.NumberOfPortions = numberOfPortions;
+            this.Description = description;
         }
 
         public override string ToString()
         {
-            return $"{name}, {numberOfPortions} adag, {expirationDate.Year}.{expirationDate.Month}";
+            return $"{Name}, {NumberOfPortions} adag, {ExpirationDate.Year}.{ExpirationDate.Month}";
         }
     }
 }

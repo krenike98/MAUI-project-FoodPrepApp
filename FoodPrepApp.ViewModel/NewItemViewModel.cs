@@ -116,7 +116,6 @@ namespace FoodPrepApp.ViewModel
             _model = model ?? throw new ArgumentNullException("model");
 
             SaveNewItemCommand = new DelegateCommand(Command_Save);
-            ImageCommand = new DelegateCommand(Command_Image);
         }
 
         private void Command_Save(object obj)
@@ -145,10 +144,8 @@ namespace FoodPrepApp.ViewModel
             else
                 _model.items.ingredients.Add(item);
             OnSaveCompleted();
+            _model.SaveData();
         }
-        private void Command_Image(object obj)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

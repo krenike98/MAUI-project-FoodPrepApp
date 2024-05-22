@@ -30,10 +30,10 @@ namespace FoodPrepApp.Persistence
             {
                 return JsonSerializer.Deserialize<Items>(jsonFromFile) ?? new Items();
             }
-            catch (JsonException ex)
+            catch (Exception)
             {
-                Console.WriteLine($"Error occurred during JSON deserialization: {ex.Message}");
-                throw new JsonException();
+                //format changed
+                return new Items();
             }
         }
     }

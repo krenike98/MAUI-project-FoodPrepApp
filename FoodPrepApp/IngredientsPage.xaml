@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FoodPrepApp.IngredientsPage"
              Title="Alapanyagok"
-             BackgroundColor="#333333"
-             BindingContext="{Binding ItemsViewModel}">
+             BackgroundColor="#333333">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
@@ -13,30 +12,90 @@
         </Grid.RowDefinitions>
 
         <Label            
-          Grid.Row="0"
-          Text="Felhasználható alapanyagok: "
-          VerticalOptions="Center" 
-          HorizontalOptions="Center" 
-          FontSize="Title"
-          FontAttributes="Bold"
-          TextColor="Black" />
+            Grid.Row="0"
+            Text="Felhasználható alapanyagok: "
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontSize="Title"
+            FontAttributes="Bold"
+            TextColor="Black" />
 
         <ListView Grid.Row="1" ItemsSource="{Binding Ingredients}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" Spacing="10" HeightRequest="50">
-                            <Label Text="{Binding name}" FontAttributes="Bold" 
-                                  TextColor="Bisque" VerticalTextAlignment="Center"
-                                  Margin="10,0,0,0"/>
-                            <Label Text="{Binding numberOfPortions, StringFormat='{0} db,'}" 
-                                  TextColor="Bisque" VerticalTextAlignment="Center"/>
-                            <Label Text="{Binding expirationDate, StringFormat='exp: {0:yyyy-MM}'}" TextColor="Bisque"
-                                  VerticalTextAlignment="Center"/>
-                            <Button Text="Részletek" Command="{Binding SelectCommand}" 
-                                   CommandParameter="{Binding}" Margin="5" BackgroundColor="Bisque" 
-                                   TextColor="Black" BorderColor="Black" BorderWidth="1"/>
-                        </StackLayout>
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40*"/>
+                                <ColumnDefinition Width="13*"/>
+                                <ColumnDefinition Width="14*"/>
+                                <ColumnDefinition Width="13*"/>
+                                <ColumnDefinition Width="20*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                
+                                <Label Text="{Binding name}" 
+                                    FontAttributes="Bold" 
+                                    TextColor="Bisque" 
+                                    VerticalTextAlignment="Center"
+                                    Margin="10,0,0,0" 
+                                    Grid.Row="0"
+                                       />
+                                <Label Text="{Binding expirationDate, StringFormat='exp: {0:yyyy-MM}'}" 
+                                    TextColor="Bisque"
+                                    Margin="7,0,0,0"
+                                    VerticalTextAlignment="Center"
+                                    Grid.Row="1"/>
+
+                            </Grid>
+
+                            <Button Grid.Column="1"
+                                Text="+"
+                                Margin="3"
+                                HorizontalOptions="End"
+                                WidthRequest="36"
+                                FontAttributes="Bold"
+                                BackgroundColor="Bisque" 
+                                TextColor="Black" 
+                                BorderColor="Black" 
+                                BorderWidth="1"
+                                Command="{Binding IncreaseCommand}"/>
+
+
+                            <Label Text="{Binding numberOfPortions, StringFormat='{0} adag'}" 
+                                TextColor="Bisque" 
+                                VerticalTextAlignment="Center"
+                                Grid.Column="2"
+                                HorizontalOptions="Center"
+                                FontAttributes="Bold"/>
+                            
+                            <Button Grid.Column="3"
+                                Text="-"
+                                Margin="3"
+                                HorizontalOptions="Start"
+                                WidthRequest="36"
+                                FontAttributes="Bold"
+                                BackgroundColor="Bisque" 
+                                TextColor="Black" 
+                                BorderColor="Black" 
+                                BorderWidth="1" 
+                                Command="{Binding DecreaseCommand}"/>
+
+                            <Button Text="Törlés" 
+                                Command="{Binding SelectCommand}" 
+                                CommandParameter="{Binding}" 
+                                Margin="3" 
+                                BackgroundColor="White" 
+                                TextColor="Black" 
+                                BorderColor="Black" 
+                                BorderWidth="1"
+                                Grid.Column="4"/>
+                        </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

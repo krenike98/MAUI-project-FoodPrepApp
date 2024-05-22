@@ -7,6 +7,6 @@ public partial class IngredientsPage : ContentPage
 	public IngredientsPage(ItemsViewModel itemsViewModel)
 	{
 		InitializeComponent();
-        BindingContext = itemsViewModel;
+		BindingContext = itemsViewModel;
     }
 }
