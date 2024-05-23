@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodPrepApp", "FoodPrepApp.csproj", "{A7080E6E-73EC-4753-AC09-6954784393D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPrepApp", "FoodPrepApp.csproj", "{A7080E6E-73EC-4753-AC09-6954784393D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodPrepApp.Model", "..\FoodPrepApp.Model\FoodPrepApp.Model.csproj", "{ED0850C3-5649-43A0-BF15-D909A94D5125}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPrepApp.Model", "..\FoodPrepApp.Model\FoodPrepApp.Model.csproj", "{ED0850C3-5649-43A0-BF15-D909A94D5125}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodPrepApp.ViewModel", "..\FoodPrepApp.ViewModel\FoodPrepApp.ViewModel.csproj", "{5F030ECE-4600-404B-B2C3-2F040C7261FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPrepApp.ViewModel", "..\FoodPrepApp.ViewModel\FoodPrepApp.ViewModel.csproj", "{5F030ECE-4600-404B-B2C3-2F040C7261FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodprepApp.Persistence", "..\FoodprepApp.Persistence\FoodprepApp.Persistence.csproj", "{310429DC-B88C-4FE5-9DB3-D993C51DD3D7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{3E71F635-40EF-4479-BFDA-A4B500579ADC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodPrepApp.Persistence", "..\FoodPrepApp.Persistence\FoodPrepApp.Persistence.csproj", "{00560948-50C1-44F2-A750-DE0A9B91D152}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodPrepApp.Persistence.JSON", "..\FoodPrepApp.Persistence.JSON\FoodPrepApp.Persistence.JSON.csproj", "{9CCDC784-7B6A-4DF8-84A0-E27B8F1809B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,9 +39,21 @@ Global
 		{310429DC-B88C-4FE5-9DB3-D993C51DD3D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{310429DC-B88C-4FE5-9DB3-D993C51DD3D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{310429DC-B88C-4FE5-9DB3-D993C51DD3D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00560948-50C1-44F2-A750-DE0A9B91D152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00560948-50C1-44F2-A750-DE0A9B91D152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00560948-50C1-44F2-A750-DE0A9B91D152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00560948-50C1-44F2-A750-DE0A9B91D152}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CCDC784-7B6A-4DF8-84A0-E27B8F1809B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CCDC784-7B6A-4DF8-84A0-E27B8F1809B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CCDC784-7B6A-4DF8-84A0-E27B8F1809B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CCDC784-7B6A-4DF8-84A0-E27B8F1809B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{00560948-50C1-44F2-A750-DE0A9B91D152} = {3E71F635-40EF-4479-BFDA-A4B500579ADC}
+		{9CCDC784-7B6A-4DF8-84A0-E27B8F1809B2} = {3E71F635-40EF-4479-BFDA-A4B500579ADC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99D61221-1F28-4090-8F96-E0DEEBF2C708}

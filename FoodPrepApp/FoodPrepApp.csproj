@@ -59,6 +59,8 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\FoodPrepApp.Model\FoodPrepApp.Model.csproj" />
+	  <ProjectReference Include="..\FoodPrepApp.Persistence.JSON\FoodPrepApp.Persistence.JSON.csproj" />
+	  <ProjectReference Include="..\FoodPrepApp.Persistence\FoodPrepApp.Persistence.csproj" />
 	  <ProjectReference Include="..\FoodPrepApp.ViewModel\FoodPrepApp.ViewModel.csproj" />
 	</ItemGroup>
 

@@ -16,8 +16,8 @@ namespace FoodPrepApp.ViewModel
         public ItemsViewModel(Model.FoodPrepModel model)
         {
             _model = model ?? throw new ArgumentNullException("model");
-            Ingredients = ConvertModels(_model.items.ingredients);
-            Dishes = ConvertModels(_model.items.dishes);
+            Ingredients = ConvertModels(_model.Items.Ingredients);
+            Dishes = ConvertModels(_model.Items.Dishes);
         }
 
         private ObservableCollection<ItemViewModel> ConvertModels(List<Item> items)

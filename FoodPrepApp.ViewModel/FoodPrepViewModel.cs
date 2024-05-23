@@ -49,8 +49,8 @@
         public FoodPrepViewModel(Model.FoodPrepModel model)
         {
             _model = model ?? throw new ArgumentNullException("model");
-            _numOfDishes = _model.getNumOfDishes();
-            _numOfIngredients = _model.getNumOfIngredients();
+            _numOfDishes = _model.GetNumOfDishes();
+            _numOfIngredients = _model.GetNumOfIngredients();
             IngredientsButtonCommand = new DelegateCommand(Command_Ingredients);
             DishesButtonCommand = new DelegateCommand(Command_Dishes);
             NewButtonCommand = new DelegateCommand(Command_New);

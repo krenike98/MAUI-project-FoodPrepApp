@@ -92,12 +92,12 @@ namespace FoodPrepApp.ViewModel
             }
         }
 
-        public DelegateCommand ImageCommand { get; private set; }
         public DelegateCommand SaveNewItemCommand { get; private set; }
 
         //eventhandlers
         public event EventHandler SaveCompleted;
         public event EventHandler<string> ValidationErrorOccurred;
+
 
         private void OnValidationError(string message)
         {
@@ -106,6 +106,7 @@ namespace FoodPrepApp.ViewModel
 
         private void OnSaveCompleted()
         {
+            _model.SaveData();
             SaveCompleted?.Invoke(this, EventArgs.Empty);
         }
 
@@ -140,9 +141,9 @@ namespace FoodPrepApp.ViewModel
 
             Item item = Item.CreateItem(Name, ExpDate, NumOfPortions, Desc);
             if (_isDish)
-                _model.items.dishes.Add(item);
+                _model.Items.Dishes.Add(item);
             else
-                _model.items.ingredients.Add(item);
+                _model.Items.Ingredients.Add(item);
             OnSaveCompleted();
             _model.SaveData();
         }

@@ -2,13 +2,15 @@
 {
     public class Items
     {
-        public List<Item> ingredients { get; set; }
-        public List<Item> dishes { get; set; }
+        public List<Item> Ingredients { get; set; }
+        public List<Item> Dishes { get; set; }
 
         public Items()
         {
-            ingredients = new List<Item>();
-            dishes = new List<Item>();
+            Ingredients = new List<Item>();
+            Dishes = new List<Item>();
         }
+
+
     }
 }
